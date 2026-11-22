@@ -1,0 +1,156 @@
+{
+  "no": 1,
+  "baslik": "Bölüm 1 · Temizliğe gittiğim konakta kendi kolyemi gördüm…",
+  "kanca": "Temizliğe gittiğim konakta kendi kolyemi gördüm…",
+  "aciklama": "Yetimhanede büyüdüm, tek hatıram boynumdaki ay kolyeydi. Temizliğe gittiğim konakta küçük bir kız, aynı kolyenin evin hanımında da olduğunu söyledi. Ama asıl şok, Kaan Bey'in beni görünce bembeyaz kesilmesiydi…",
+  "soru": "Sizce Kaan yirmi yıl önce ne yaptı?",
+  "etiketler": [
+    "animasyondizi",
+    "cizgifilm",
+    "hikaye",
+    "dram",
+    "aile",
+    "konak",
+    "cizgidizi"
+  ],
+  "sahneler": [
+    {
+      "mekan": "salon",
+      "zaman": "gunduz",
+      "zengin": true,
+      "oyuncular": {
+        "nermin": {
+          "x": 260,
+          "derinlik": 0.15,
+          "poz": "kollari-bagli",
+          "duygu": "supheli"
+        },
+        "zeynep": {
+          "x": 820,
+          "derinlik": 0.1,
+          "duygu": "utangac"
+        },
+        "defne": {
+          "x": 540,
+          "derinlik": 0,
+          "gizli": true,
+          "yon": "sag"
+        },
+        "kaan": {
+          "x": 600,
+          "derinlik": 0.65,
+          "gizli": true
+        }
+      },
+      "cekimler": [
+        {
+          "kim": "nermin",
+          "soz": "Yeni temizlikçi sen misin? Hiçbir şeye dokunmayacaksın.",
+          "kamera": {
+            "tip": "orta",
+            "hedef": "nermin"
+          },
+          "efekt": "karar"
+        },
+        {
+          "kim": "zeynep",
+          "soz": "Merak etmeyin hanımefendi, sadece işimi yapacağım.",
+          "kamera": {
+            "tip": "yakin",
+            "hedef": "zeynep"
+          }
+        },
+        {
+          "kim": "defne",
+          "soz": "Abla! Senin kolyen babaannemin kolyesinin aynısı!",
+          "duygu": "mutlu",
+          "poz": "isaret",
+          "oyuncular": {
+            "defne": {
+              "gizli": false
+            }
+          },
+          "kamera": {
+            "tip": "genis"
+          }
+        },
+        {
+          "sure": 1.1,
+          "oyuncular": {
+            "nermin": {
+              "duygu": "saskin",
+              "poz": "ayakta"
+            },
+            "defne": {
+              "poz": "ayakta"
+            }
+          },
+          "kamera": {
+            "tip": "cok-yakin",
+            "hedef": "nermin"
+          },
+          "efekt": "sarsinti"
+        },
+        {
+          "kim": "nermin",
+          "soz": "O kolyeyi... sana kim verdi?",
+          "duygu": "korku",
+          "poz": "eller-agizda",
+          "kamera": {
+            "tip": "yakin",
+            "hedef": "nermin"
+          }
+        },
+        {
+          "kim": "zeynep",
+          "soz": "Yetimhanede... bebekken boynumda bulmuşlar.",
+          "duygu": "saskin",
+          "kamera": {
+            "tip": "orta",
+            "hedef": "zeynep"
+          }
+        },
+        {
+          "kim": "kaan",
+          "soz": "Anne! Bu kızı hemen bu evden çıkar!",
+          "duygu": "kizgin",
+          "poz": "isaret",
+          "oyuncular": {
+            "kaan": {
+              "gizli": false
+            }
+          },
+          "kamera": {
+            "tip": "orta",
+            "hedef": "kaan"
+          },
+          "efekt": "flas"
+        },
+        {
+          "sure": 1,
+          "oyuncular": {
+            "zeynep": {
+              "duygu": "korku"
+            }
+          },
+          "kamera": {
+            "tip": "yakin",
+            "hedef": "zeynep",
+            "hareket": "titrek"
+          }
+        },
+        {
+          "kim": "nermin",
+          "soz": "Kaan... Yoksa yirmi yıl önce... sen mi?",
+          "duygu": "aglama",
+          "poz": "ayakta",
+          "kamera": {
+            "tip": "cok-yakin",
+            "hedef": "nermin"
+          },
+          "sure": 0.8
+        }
+      ]
+    }
+  ]
+}

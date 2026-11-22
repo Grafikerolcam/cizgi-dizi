@@ -1,0 +1,7 @@
+node_modules/
+out/
+.env
+public/diziler/*
+!public/diziler/.gitkeep
+*.log
+.cache/
