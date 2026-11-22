@@ -14,7 +14,7 @@ Proje: `C:\Users\hazal\cizgi-dizi`. Stack: Remotion 4 + React SVG karakterler + 
 3. **Bölüm dosyası.** `diziler/<dizi>/bolum-01.json`. Sahneler → oyuncular → çekimler.
 4. **Kontrol (kredisiz).** `npm run kontrol -- <dizi>` komutu dosyayı doğrular, süreyi ve harf/kredi tahminini verir.
 5. **Seslendir.** `npm run seslendir -- <dizi> bolum-01` her repliği ElevenLabs ile seslendirir; ağız hareketini ve zamanlamayı çıkarır, `caption.txt` yazar. Önbellek `.cache/tts` içinde tutulur: aynı replik ikinci kez kredi harcamaz.
-6. **Render.** `npm run render -- <dizi> bolum-01` → `out/<dizi>-bolum-01.mp4` ve `-caption.txt`.
+6. **Render.** `npm run render -- <dizi> bolum-01` şu üç dosyayı üretir: `out/<dizi>-bolum-01.mp4`, `-caption.txt` ve **`-kapak.png`** (Instagram kapak görseli). Kapakta dizi adı büyük harfle, kırmızı "BÖLÜM N" etiketi ve ağlayan ana karakter yer alır; arkada iki karakter durur. Kapağı ayrıca almak için: `npx remotion still Kapak out/k.png --props=out/props-<dizi>-<bolum>.json`. Öndeki ve arkadaki karakterler ile duygular `KapakProps` (`ana`, `yanlar`, `anaDuygu`, `yanDuygular`) üzerinden değiştirilebilir. Yazılar 3:4 profil ızgarası kırpımının (y 240–1680) içinde kalır.
 7. **Doğrula.** Kare kolajı çıkar (`ffmpeg -vf "fps=1/2,scale=240:-1,tile=8x2"`) ve bak: yakın planda hedefin önünde biri var mı, karakter kadraj dışında mı? İstersen sesi Scribe ile yazıya döküp repliklerle karşılaştır.
 
 Karakter tasarlarken `npm run kontrol -- <dizi>` çalıştır, sonra `npm run dev` ile Studio'da **Vitrin** kompozisyonunu aç. Tüm karakterler bütün duygu ve pozlarda sırayla görünür. Hızlı kare için: `npx remotion still Vitrin out/v.png --frame=110 --scale=0.5`.
@@ -38,7 +38,7 @@ Karakter tasarlarken `npm run kontrol -- <dizi>` çalıştır, sonra `npm run de
 - `yas`: `cocuk` | `genc` | `yetiskin` | `yasli`. Çocuk küçük gövdeli ve iri kafalı çizilir; yaşlıda kırışıklık olur.
 - `sac`: `kisa` | `dagnik` | `uzun` | `orgu` | `topuz` | `at-kuyrugu` | `kel` | `basortusu`. Başörtüsünde rengi `sacRengi` belirler.
 - Giysi: `ust`, `alt`, `etek`, `elbise`, `desen` (`puantiye` | `cizgili` | `ekose`), `yaka`, `kisaKol`, `ayakkabi`.
-- Yüz: `sakal` (`biyik` | `kirli` | `sakal`), `gozluk`.
+- Yüz ve aksesuar: `sakal` (`biyik` | `kirli` | `sakal`), `gozluk`, `kolye` (ay kolye rengi, ör. `#e8c35a`).
 - Bu hesapta Türkçe sesler var:
   - **Yunus** `fXhoW006nc5Wf8xkGVSy`: erkek
   - **Yasemin** `ywzrmJ3AgYiLqAeZAGrq`: kadın, derin; yaşlı kadın için `perde: -1`

@@ -210,7 +210,7 @@ fs.writeFileSync(
 );
 
 const caption = [
-  `${B.baslik} ✏️`,
+  `${D.ad} · ${B.baslik} ✏️`,
   "",
   B.aciklama,
   "",

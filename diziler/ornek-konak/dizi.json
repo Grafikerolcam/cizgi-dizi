@@ -1,5 +1,5 @@
 {
-  "ad": "Konağın Kayıp Kızı",
+  "ad": "Kimin Kızıyım?",
   "hesap": "@cizgidizi",
   "karakterler": {
     "zeynep": {
@@ -13,7 +13,8 @@
         "gozRengi": "#6b4a2e",
         "ust": "#9fb4cf",
         "alt": "#4f5a6e",
-        "yaka": true
+        "yaka": true,
+        "kolye": "#e8c35a"
       },
       "ses": {
         "id": "axtmxCPnqPghs9C5SjJ8",
@@ -33,7 +34,8 @@
         "alt": "#7a2b34",
         "elbise": true,
         "gozluk": true,
-        "ayakkabi": "#2e2420"
+        "ayakkabi": "#2e2420",
+        "kolye": "#e8c35a"
       },
       "ses": {
         "id": "ywzrmJ3AgYiLqAeZAGrq",

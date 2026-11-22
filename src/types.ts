@@ -44,6 +44,7 @@ export type Gorunum = {
   gozluk?: boolean;
   ayakkabi?: string;
   kisaKol?: boolean;
+  kolye?: string; // ay kolye rengi (ör. "#e8c35a")
   boy?: number; // 1 = varsayılan (yaşa göre)
 };
 

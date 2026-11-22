@@ -494,7 +494,7 @@ export const Karakter: React.FC<Props> = ({ g, duygu, poz, yon, otur, t, konusma
         <g>
           <path d={`M -48 ${omuzY - 8} L -6 ${omuzY + 36} L -56 ${omuzY + 34} Z`} fill={koyu(govdeRenk, 0.95)} stroke={KONTUR} strokeWidth={4} strokeLinejoin="round" />
           <path d={`M 48 ${omuzY - 8} L 6 ${omuzY + 36} L 56 ${omuzY + 34} Z`} fill={koyu(govdeRenk, 0.95)} stroke={KONTUR} strokeWidth={4} strokeLinejoin="round" />
-          {[80, 170, 260].map((y) => (omuzY + y < kalca ? <circle key={y} cx={0} cy={omuzY + y} r={6} fill={KONTUR} /> : null))}
+          {(g.kolye ? [120, 200, 280] : [80, 170, 260]).map((y) => (omuzY + y < kalca ? <circle key={y} cx={0} cy={omuzY + y} r={6} fill={KONTUR} /> : null))}
         </g>
       )}
       {!g.yaka && <path d={`M -44 ${omuzY - 9} Q 0 ${omuzY + 34} 44 ${omuzY - 9}`} fill={g.ten} stroke={KONTUR} strokeWidth={4} />}
@@ -503,6 +503,18 @@ export const Karakter: React.FC<Props> = ({ g, duygu, poz, yon, otur, t, konusma
       {/* boyun */}
       <rect x={-27 * hs} y={kafaY - 10} width={54 * hs} height={60} fill={g.ten} stroke={KONTUR} strokeWidth={KW} />
       <rect x={-27 * hs + 3} y={kafaY + 34} width={54 * hs - 6} height={14} fill={g.ten} />
+
+      {/* ay kolye */}
+      {g.kolye && (
+        <g>
+          <path d={`M ${-24 * hs} ${omuzY - 16} Q ${-14 * hs} ${omuzY + 30} 0 ${omuzY + 34} Q ${14 * hs} ${omuzY + 30} ${24 * hs} ${omuzY - 16}`} fill="none" stroke={g.kolye} strokeWidth={3.5} />
+          <g transform={`translate(0,${omuzY + 54})`}>
+            <circle r={30} fill={g.kolye} opacity={0.18} />
+            <path d="M 7 -18 A 19 19 0 1 0 7 18 A 14 14 0 1 1 7 -18 Z" fill={g.kolye} stroke={KONTUR} strokeWidth={3} strokeLinejoin="round" />
+            <circle cx={-9} cy={-6} r={3} fill="#fff" opacity={0.85} />
+          </g>
+        </g>
+      )}
 
       {/* kafa */}
       <g transform={`translate(0,${kafaY}) scale(${hs}) rotate(${kafaAci}) translate(0,-130)`}>

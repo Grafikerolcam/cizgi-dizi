@@ -24,6 +24,9 @@ const r = spawnSync("npx", ["remotion", "render", "Bolum", cikti, `--props=${pro
   shell: process.platform === "win32",
 });
 if (r.status === 0) {
+  const kapak = `out/${dizi}-${bolum}-kapak.png`;
+  spawnSync("npx", ["remotion", "still", "Kapak", kapak, `--props=${props}`], { cwd: root, stdio: "inherit", shell: process.platform === "win32" });
+  console.log(`→ ${kapak}`);
   const cap = path.join(root, "public", "diziler", dizi, bolum, "caption.txt");
   fs.copyFileSync(cap, path.join(root, "out", `${dizi}-${bolum}-caption.txt`));
   console.log(`\n→ ${cikti}\n→ out/${dizi}-${bolum}-caption.txt`);

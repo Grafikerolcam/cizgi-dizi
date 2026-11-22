@@ -174,7 +174,7 @@ const CekimGoruntu: React.FC<{ c: CekimData; data: BolumData }> = ({ c, data }) 
 };
 
 // ---------- açılış kancası ve son kart ----------
-const Kanca: React.FC<{ metin: string; baslik: string }> = ({ metin, baslik }) => {
+const Kanca: React.FC<{ metin: string; baslik: string; dizi: string }> = ({ metin, baslik, dizi }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
   const t = frame / fps;
@@ -182,7 +182,7 @@ const Kanca: React.FC<{ metin: string; baslik: string }> = ({ metin, baslik }) =
   const bolumNo = baslik.split("·")[0].trim();
   return (
     <div style={{ position: "absolute", left: 70, right: 70, top: 230, textAlign: "center", opacity: op, fontFamily: ALTYAZI_FONT }}>
-      <div style={{ display: "inline-block", background: "#c0392b", color: "#fff", fontSize: 34, fontWeight: 700, padding: "8px 26px", borderRadius: 40, marginBottom: 18 }}>{bolumNo}</div>
+      <div style={{ display: "inline-block", background: "#c0392b", color: "#fff", fontSize: 34, fontWeight: 700, padding: "8px 26px", borderRadius: 40, marginBottom: 18 }}>{dizi} · {bolumNo}</div>
       <div style={{ fontSize: 64, fontWeight: 700, color: "#fffaf0", WebkitTextStroke: "10px #1d1612", paintOrder: "stroke fill", lineHeight: 1.15 }}>{metin}</div>
     </div>
   );
@@ -228,7 +228,7 @@ export const Bolum: React.FC<BolumProps> = ({ data }) => {
       <Filigran hesap={data.hesap} />
       {data.kanca && (
         <Sequence durationInFrames={Math.round(3 * fps)}>
-          <Kanca metin={data.kanca} baslik={data.baslik} />
+          <Kanca metin={data.kanca} baslik={data.baslik} dizi={data.dizi} />
         </Sequence>
       )}
       <Sequence from={Math.round(son.son * fps)}>
