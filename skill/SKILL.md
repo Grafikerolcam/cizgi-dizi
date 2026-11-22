@@ -85,6 +85,10 @@ Karakter tasarlarken `npm run kontrol -- <dizi>` çalıştır, sonra `npm run de
 - **efekt**: `karar` (siyahtan açılış; ilk çekimde kullan) | `flas` (ani giriş veya ifşa) | `sarsinti` (şok).
 - **sure**: sessiz çekimin uzunluğu; replikli çekimde replikten sonraki ek bekleme. Konuşmasız `soz` iç ses ya da yazı kartı olarak altyazıda görünür.
 
+## Hesap
+
+Instagram hesabı **@cizgidizikanali**; bu ad her `dizi.json` içinde `hesap` alanına yazılır. Profil fotoğrafı, ekranında ağlayan kahramanın olduğu eski tüplü bir televizyon; arka plan kırmızı ışınlı. Üretmek için: `npx remotion still Profil out/profil.png --props=out/props-<dizi>-<bolum>.json`. Ekrandaki karakter `yuz` ile, ifadesi `duygu` ile değişir.
+
 ## Notlar
 
 - Altyazı serif (Lora 700), beyaz ve kalın koyu konturludur; referanstaki gibi ekranın %67'sinde durur. Filigran sol üstte `@hesap`. Sonda 2.2 sn'lik "Devamı için takipte kalın" kartı ve sallanan zil var.

@@ -1,6 +1,7 @@
 import React from "react";
 import { CalculateMetadataFunction, Composition, Still, staticFile } from "remotion";
 import { Kapak, KapakProps } from "./Kapak";
+import { Profil, ProfilProps } from "./Profil";
 import { Bolum, SON_KART } from "./Bolum";
 import { KarakterVitrini } from "./Vitrin";
 import { BolumData, BolumProps } from "./types";
@@ -31,6 +32,7 @@ export const Kok: React.FC = () => (
       calculateMetadata={meta}
     />
     <Still id="Kapak" component={Kapak} width={1080} height={1920} defaultProps={{ dizi: "ornek-konak", bolum: "bolum-01" } as KapakProps} calculateMetadata={async ({ props }) => ({ props: { ...props, data: await veri(props) } })} />
+    <Still id="Profil" component={Profil} width={1080} height={1080} defaultProps={{ dizi: "ornek-konak", bolum: "bolum-01" } as ProfilProps} calculateMetadata={async ({ props }) => ({ props: { ...props, data: await veri(props) } })} />
     <Composition id="Vitrin" component={KarakterVitrini} width={1080} height={1920} fps={FPS} durationInFrames={150} defaultProps={{ dizi: "ornek-konak" }} />
   </>
 );

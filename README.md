@@ -37,6 +37,7 @@ src/karakter/Karakter.tsx       SVG karakter (yaş, saç, giysi, 10 duygu, 8 poz
 src/mekan/Mekan.tsx             salon, yatak odası, mutfak, sokak, hastane, ofis (gündüz/gece, zengin varyant)
 src/Bolum.tsx                   kamera, altyazı, filigran, kanca, son kart
 src/Kapak.tsx                   Instagram kapak görseli (dizi adı + BÖLÜM N)
+src/Profil.tsx                  Instagram profil fotoğrafı (tüplü TV + ağlayan kahraman)
 scripts/seslendir.mjs           TTS → ağız zarfı → data.json + caption.txt
 scripts/kontrol.mjs             doğrulama + süre/kredi tahmini
 skill/SKILL.md                  Claude Code skill'i (format referansı)
