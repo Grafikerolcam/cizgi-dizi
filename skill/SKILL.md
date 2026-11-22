@@ -1,6 +1,6 @@
 ---
 name: cizgi-dizi
-description: Instagram/TikTok için yapay zekâ seslendirmeli 2D çizgi dram dizisi (9:16 Reels) üretir. Yassı karakterler, kalın kontur, ağlayan/şaşıran yüzler, serif altyazı, "Bölüm N · …" başlığı, sonda "Devamı için takipte kalın". Türk dizisi kalıplarıyla (gizli kimlik, kayınvalide, paralel evren, değiştirilen bebek…) senaryo yazar, ElevenLabs ile her karakteri farklı sesle seslendirir, Remotion ile render eder. Proje C:\Users\hazal\cizgi-dizi. Kullanıcı "çizgi dizi", "animasyon dizi", "bölüm yaz", "dizi senaryosu", "oadambendegilim tarzı", "karakterli hikâye reels" dediğinde kullan.
+description: Instagram/TikTok için yapay zekâ seslendirmeli 2D çizgi dram dizisi (9:16 Reels, varsayılan ~3 dk) üretir. Yassı karakterler, kalın kontur, ağlayan/şaşıran yüzler, serif altyazı, "Bölüm N · …" başlığı, sonda "Devamı için takipte kalın". Türk dizisi kalıplarıyla (gizli kimlik, kayınvalide, paralel evren, değiştirilen bebek…) senaryo yazar, ElevenLabs ile her karakteri farklı sesle seslendirir, Remotion ile render eder. Proje C:\Users\hazal\cizgi-dizi. Kullanıcı "çizgi dizi", "animasyon dizi", "bölüm yaz", "dizi senaryosu", "oadambendegilim tarzı", "karakterli hikâye reels" dediğinde kullan.
 ---
 
 # Çizgi Dizi
@@ -9,7 +9,7 @@ Proje: `C:\Users\hazal\cizgi-dizi`. Stack: Remotion 4 + React SVG karakterler + 
 
 ## Akış
 
-1. **Fikir ve senaryo.** Önce `skill/senaryo-rehberi.md` dosyasını oku. Kalıp kataloğundan birini seç (ya da kullanıcının fikrini al) ve bölümü 30–60 sn, 6–10 replik olarak kur: kanca → durum → tırmanma → darbe → askı. Senaryoyu kullanıcıya kısaca göster. Onay gelmeden seslendirme yapma, çünkü kredi harcar.
+1. **Fikir ve senaryo.** Önce `skill/senaryo-rehberi.md` dosyasını oku. Kalıp kataloğundan birini seç (ya da kullanıcının fikrini al) ve bölümü **varsayılan olarak maksimum sürede kur: 3 dakikanın hemen altı** (~175 sn, 40–45 replik, 3–4 sahne, 4 perde). Her 20–30 sn'de bir mini kanca olsun. Hazal kısa isterse 30–60 sn. Senaryoyu kullanıcıya kısaca göster. Onay gelmeden seslendirme yapma, çünkü kredi harcar.
 2. **Dizi dosyası.** `diziler/<dizi>/dizi.json` içinde hesap adı, karakterler (görünüm + ses) ve ses id'leri yer alır.
 3. **Bölüm dosyası.** `diziler/<dizi>/bolum-01.json`. Sahneler → oyuncular → çekimler.
 4. **Kontrol (kredisiz).** `npm run kontrol -- <dizi>` komutu dosyayı doğrular, süreyi ve harf/kredi tahminini verir.
@@ -89,7 +89,8 @@ Karakter tasarlarken `npm run kontrol -- <dizi>` çalıştır, sonra `npm run de
 
 - Altyazı serif (Lora 700), beyaz ve kalın koyu konturludur; referanstaki gibi ekranın %67'sinde durur. Filigran sol üstte `@hesap`. Sonda 2.2 sn'lik "Devamı için takipte kalın" kartı ve sallanan zil var.
 - Müzik: bölüm JSON'una `"muzik": "muzik/dosya.mp3"` ekle (public/ altında, telifsiz). %12 seste döner.
-- Kredi: starter planda ayda 40k karakter. Bir bölüm ~300–500 harf tutar. `kontrol` komutu tahmini gösterir.
+- Süre: seslendirmeden sonra çıktıdaki "N çekim, X sn" satırına bak. X + 2,2 ≤ 178 olmalı (3 dk sınırı). Fazlaysa replik sil ve yeniden seslendir; önbellekteki replikler tekrar kredi yemez. Replikten sonraki boşluk varsayılan olarak 0,22 sn.
+- Kredi: starter planda ayda 40k karakter. 3 dakikalık bir bölüm ~2000 harf, kısa bölüm ~300–500 harf tutar. `kontrol` komutu tahmini gösterir.
 - v3 hata verirse `seslendir` otomatik olarak `eleven_multilingual_v2`'ye düşer (bu modelde etiket yok). Elle seçmek için `--model eleven_multilingual_v2`. Önbelleği yok saymak için `--yeniden`.
 - Yeni mekân, poz ya da saç eklemek için: `src/mekan/Mekan.tsx`, `src/karakter/Karakter.tsx` (`POZ` el hedefleri, `IFADE` duyguları, `SacArka`/`SacOn`) ve `scripts/dogrula.mjs` listeleri. Hepsi birlikte güncellenmeli.
 - Repo'ya ses ve video girmez (`public/diziler/*`, `out/` gitignore'da). `.env` asla commit edilmez.

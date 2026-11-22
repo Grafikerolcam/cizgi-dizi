@@ -1,4 +1,4 @@
-# Senaryo Rehberi: Tutan Türk Dizisi Kalıpları → 30–60 sn'lik Çizgi Dizi
+# Senaryo Rehberi: Tutan Türk Dizisi Kalıpları → Çizgi Dizi Bölümü (≤ 3 dk)
 
 Bu rehber iki kaynaktan derlendi:
 1. **Türk televizyon dizilerinin neden tuttuğuna dair araştırmalar.** Duygusal yay analizleri, "dizi" ihracatı üzerine yazılar ve izleyici yorumları.
@@ -17,7 +17,26 @@ Amaç kopyalamak değil: **kalıbı al, karakteri ve olayı özgün yaz.** Gerç
 - **Uzun bölümler kısa platformlarda parçalanıyor.** Türk dizileri 2 saatlik bölümlerle bilinir. Yurt dışında ve kısa video platformlarında parçalara bölünerek tüketiliyor. Bizim formatımız da bu: tek sahne, tek darbe.
 - **Sosyal medya biçiminin dili.** Hesap ve bölüm numarası net görünür. Başlık birinci tekil şahıstan bir itiraf cümlesidir ("Uyandığımda karım benden korkuyordu…"). Açıklamada 2–3 cümlelik bir özet, bir yorum sorusu ve "Devamı için takipte kalın 🔔" yer alır.
 
-## 2. Bölüm yapısı (30–60 sn, 6–10 replik)
+## 2. Bölüm yapısı
+
+**Varsayılan uzunluk: maksimum, yani 3 dakikanın hemen altı** (~175 sn içerik + 2,2 sn son kart). Hazal böyle istiyor. Instagram daha uzun Reels yüklemeye izin veriyor, ama 3 dakikayı aşan videolar takipçi olmayanlara (keşfete) önerilmiyor. Bu yüzden pratik sınır 3 dk. Bu süre yaklaşık **40–45 replik ve 3–4 sahne** demek (~2000 harf ≈ 2000 ElevenLabs kredisi).
+
+### Uzun bölüm (≤ 3 dk): 4 perde
+
+| Zaman | Perde | Ne olur |
+|---|---|---|
+| 0–25 sn | **1. Giriş + kanca** | Kahramanın tek cümlelik derdi ve bir uyarı ya da sır ipucu ("o kolyeyi sakın gösterme"). |
+| 25–90 sn | **2. Çatışma** | Ana mekânda karşılaşma, ipucunun açığa çıkması, darbe ve kötü karakterin girişi. |
+| 90–140 sn | **3. Sırrın ilk katmanı** | Başka bir mekânda müttefik geçmişi anlatır, kötü karakter tehdit eder ya da rüşvet teklif eder. |
+| 140–175 sn | **4. Askı** | Güçlü taraf karar verir (DNA testi vb.), kötü karakter engeller, yarım kalan soru. |
+
+**Uzun bölümde seyirci kaybetmemek için:**
+- **Her 20–30 sn'de bir mini kanca** olsun: yeni bilgi, yeni karakter girişi, ya da bir `flas` veya `sarsinti` efekti.
+- **Her sahne bir soruyla bitsin.** Bir sonraki sahne o soruyu açar.
+- Aynı yüz üst üste en fazla 2 çekim görünsün; tepki çekimiyle böl.
+- Süreyi `kontrol` komutuyla tahmin et. Seslendirmeden sonra çıktıdaki süre 175 sn'yi geçerse en zayıf replikleri sil ("sevimli" ara replikler ilk gider) ve yeniden seslendir. Önbellek sayesinde kalan replikler tekrar kredi harcamaz.
+
+### Kısa bölüm (30–60 sn, 6–10 replik): Hazal kısa isterse
 
 | Zaman | Vuruş | Ne olur |
 |---|---|---|

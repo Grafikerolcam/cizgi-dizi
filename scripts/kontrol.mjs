@@ -29,11 +29,11 @@ for (const b of bolumler) {
       if (c.kim && c.soz) {
         harf += c.soz.length;
         replik++;
-        sure += 0.12 + c.soz.length / 14 + (c.sure ?? 0.3); // ~14 harf/sn Türkçe konuşma
+        sure += 0.12 + c.soz.length / 12.5 + (c.sure ?? 0.22); // ~12.5 harf/sn (v3, duygulu okuma)
       } else sure += c.sure ?? 1.2;
     }
   console.log(`${b}: ${replik} replik, ~${sure.toFixed(0)} sn, ${harf} harf (ElevenLabs kredisi ≈ ${harf})`);
-  if (sure > 75) console.log("  ! 75 sn'den uzun: Reels için kısalt ya da iki bölüme ayır");
+  if (sure > 175) console.log("  ! ~175 sn'den uzun: son kartla 3 dk Reels sınırını aşar, kısalt");
   if (h.length) {
     hataVar = true;
     console.log(" - " + h.join("\n - "));

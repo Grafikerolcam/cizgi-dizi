@@ -181,7 +181,7 @@ for (const [si, sahne] of B.sahneler.entries()) {
       kayit.ses = `diziler/${dizi}/${bolum}/sesler/${ad}`;
       kayit.sesBas = sesBas;
       kayit.env = zarf(hedef);
-      kayit.son = t + sesBas + sure + (c.sure ?? 0.3);
+      kayit.son = t + sesBas + sure + (c.sure ?? 0.22);
       console.log(`  ${ad.padEnd(18)} ${sure.toFixed(2)} sn  ${c.soz}`);
     } else {
       if (c.soz) kayit.soz = c.soz; // konuşmasız yazı (ör. iç ses / anlatım kartı)

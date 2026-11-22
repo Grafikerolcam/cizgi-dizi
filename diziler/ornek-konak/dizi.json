@@ -4,23 +4,104 @@
   "karakterler": {
     "zeynep": {
       "ad": "Zeynep",
-      "gorunum": { "yas": "genc", "cinsiyet": "kadin", "ten": "#efcfb4", "sac": "at-kuyrugu", "sacRengi": "#5a3a26", "gozRengi": "#6b4a2e", "ust": "#9fb4cf", "alt": "#4f5a6e", "yaka": true },
-      "ses": { "id": "axtmxCPnqPghs9C5SjJ8", "stabilite": 0.5 }
+      "gorunum": {
+        "yas": "genc",
+        "cinsiyet": "kadin",
+        "ten": "#efcfb4",
+        "sac": "at-kuyrugu",
+        "sacRengi": "#5a3a26",
+        "gozRengi": "#6b4a2e",
+        "ust": "#9fb4cf",
+        "alt": "#4f5a6e",
+        "yaka": true
+      },
+      "ses": {
+        "id": "axtmxCPnqPghs9C5SjJ8",
+        "stabilite": 0.5
+      }
     },
     "nermin": {
       "ad": "Nermin Hanım",
-      "gorunum": { "yas": "yasli", "cinsiyet": "kadin", "ten": "#ecc9ad", "sac": "topuz", "sacRengi": "#d9d4cc", "gozRengi": "#5f8a6a", "ust": "#7a2b34", "alt": "#7a2b34", "elbise": true, "gozluk": true, "ayakkabi": "#2e2420" },
-      "ses": { "id": "ywzrmJ3AgYiLqAeZAGrq", "perde": -1, "hiz": 0.96, "stabilite": 0.5 }
+      "gorunum": {
+        "yas": "yasli",
+        "cinsiyet": "kadin",
+        "ten": "#ecc9ad",
+        "sac": "topuz",
+        "sacRengi": "#d9d4cc",
+        "gozRengi": "#5f8a6a",
+        "ust": "#7a2b34",
+        "alt": "#7a2b34",
+        "elbise": true,
+        "gozluk": true,
+        "ayakkabi": "#2e2420"
+      },
+      "ses": {
+        "id": "ywzrmJ3AgYiLqAeZAGrq",
+        "perde": -1,
+        "hiz": 0.96,
+        "stabilite": 0.5
+      }
     },
     "kaan": {
       "ad": "Kaan",
-      "gorunum": { "yas": "yetiskin", "cinsiyet": "erkek", "ten": "#e6bf9e", "sac": "kisa", "sacRengi": "#2a1d17", "gozRengi": "#4a3426", "ust": "#2f3f66", "alt": "#3a3a40", "yaka": true, "sakal": "kirli" },
-      "ses": { "id": "fXhoW006nc5Wf8xkGVSy", "stabilite": 0.5 }
+      "gorunum": {
+        "yas": "yetiskin",
+        "cinsiyet": "erkek",
+        "ten": "#e6bf9e",
+        "sac": "kisa",
+        "sacRengi": "#2a1d17",
+        "gozRengi": "#4a3426",
+        "ust": "#2f3f66",
+        "alt": "#3a3a40",
+        "yaka": true,
+        "sakal": "kirli"
+      },
+      "ses": {
+        "id": "fXhoW006nc5Wf8xkGVSy",
+        "stabilite": 0.5
+      }
     },
     "defne": {
       "ad": "Defne",
-      "gorunum": { "yas": "cocuk", "cinsiyet": "kadin", "ten": "#f2d3bb", "sac": "orgu", "sacRengi": "#d9b25e", "gozRengi": "#5b7fb5", "ust": "#f1e6e4", "alt": "#f1e6e4", "elbise": true, "desen": "puantiye", "ayakkabi": "#f4f1ea" },
-      "ses": { "id": "cgSgspJ2msm6clMCkdW9", "perde": 4, "stabilite": 0.5 }
+      "gorunum": {
+        "yas": "cocuk",
+        "cinsiyet": "kadin",
+        "ten": "#f2d3bb",
+        "sac": "orgu",
+        "sacRengi": "#d9b25e",
+        "gozRengi": "#5b7fb5",
+        "ust": "#f1e6e4",
+        "alt": "#f1e6e4",
+        "elbise": true,
+        "desen": "puantiye",
+        "ayakkabi": "#f4f1ea"
+      },
+      "ses": {
+        "id": "cgSgspJ2msm6clMCkdW9",
+        "perde": 4,
+        "stabilite": 0.5
+      }
+    },
+    "hatice": {
+      "ad": "Hatice",
+      "gorunum": {
+        "yas": "yasli",
+        "cinsiyet": "kadin",
+        "ten": "#e3bc98",
+        "sac": "basortusu",
+        "sacRengi": "#7d8c6a",
+        "gozRengi": "#5a4030",
+        "ust": "#c7a98a",
+        "alt": "#5b4a3e",
+        "etek": true,
+        "ayakkabi": "#3b3431"
+      },
+      "ses": {
+        "id": "axtmxCPnqPghs9C5SjJ8",
+        "perde": -3,
+        "hiz": 0.95,
+        "stabilite": 0.5
+      }
     }
   }
 }
