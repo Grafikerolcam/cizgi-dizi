@@ -1,4 +1,4 @@
-// node scripts/seslendir.mjs <dizi> <bolum> [--model eleven_v3|eleven_multilingual_v2] [--yeniden]
+// node scripts/seslendir.mjs <dizi> <bolum> [--model eleven_v4] [--yeniden]
 // diziler/<dizi>/dizi.json + diziler/<dizi>/<bolum>.json → ElevenLabs ile her repliği seslendirir,
 // zamanlamayı ve ağız hareketini çıkarır → public/diziler/<dizi>/<bolum>/data.json (+ sesler/, caption.txt)
 import { spawnSync } from "node:child_process";
@@ -17,7 +17,9 @@ if (!dizi || !bolum) {
   console.error("kullanım: node scripts/seslendir.mjs <dizi> <bolum>   (ör. ornek-konak bolum-01)");
   process.exit(1);
 }
-const MODEL = deger("--model", "eleven_v3");
+const MODEL = deger("--model", "eleven_v4");
+// v3/v4 satır içi duygu etiketlerini ([crying], [angry]…) destekler
+const ETIKETLI = (m) => /^eleven_v[34]/.test(m);
 const FPS = 30;
 
 // .env
@@ -78,7 +80,12 @@ const tts = async (metin, ses, model) => {
     text: metin,
     model_id: model,
     language_code: "tr",
-    voice_settings: model === "eleven_v3" ? { stability: [0, 0.5, 1].reduce((a, b) => (Math.abs(b - kararlilik) < Math.abs(a - kararlilik) ? b : a)) } : { stability: kararlilik, similarity_boost: 0.8, style: 0.35 },
+    voice_settings:
+      model === "eleven_v3"
+        ? { stability: [0, 0.5, 1].reduce((a, b) => (Math.abs(b - kararlilik) < Math.abs(a - kararlilik) ? b : a)) }
+        : ETIKETLI(model)
+          ? { stability: kararlilik, similarity_boost: 0.8 } // v4: style/speed yok
+          : { stability: kararlilik, similarity_boost: 0.8, style: 0.35 },
   };
   const h = crypto.createHash("sha1").update(JSON.stringify({ body, id: ses.id })).digest("hex").slice(0, 16);
   const f = path.join(cache, `${h}.mp3`);
@@ -150,14 +157,8 @@ for (const [si, sahne] of B.sahneler.entries()) {
       const k = karakterler[c.kim];
       const duygu = durum[c.kim]?.duygu ?? "normal";
       const ton = c.ton ?? TON[duygu] ?? "";
-      let ham;
-      try {
-        ham = await tts(MODEL === "eleven_v3" && ton ? `${ton} ${c.soz}` : c.soz, k.ses, MODEL);
-      } catch (e) {
-        if (MODEL !== "eleven_v3") throw e;
-        console.warn(`  v3 olmadı (${e.message.slice(0, 80)}), eleven_multilingual_v2 deneniyor`);
-        ham = await tts(c.soz, k.ses, "eleven_multilingual_v2");
-      }
+      // Başka modele sessizce geçilmez: hata olursa durur.
+      const ham = await tts(ETIKETLI(MODEL) && ton ? `${ton} ${c.soz}` : c.soz, k.ses, MODEL);
       toplamKarakter += c.soz.length;
       const ad = `${String(++sesNo).padStart(2, "0")}-${c.kim}.mp3`;
       const hedef = path.join(sesDir, ad);

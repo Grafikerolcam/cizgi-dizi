@@ -17,7 +17,7 @@
         "kolye": "#e8c35a"
       },
       "ses": {
-        "id": "axtmxCPnqPghs9C5SjJ8",
+        "id": "NNn9dv8zq2kUo7d3JSGG",
         "stabilite": 0.5
       }
     },
@@ -38,8 +38,8 @@
         "kolye": "#e8c35a"
       },
       "ses": {
-        "id": "ywzrmJ3AgYiLqAeZAGrq",
-        "perde": -1,
+        "id": "NNn9dv8zq2kUo7d3JSGG",
+        "perde": -2,
         "hiz": 0.96,
         "stabilite": 0.5
       }
@@ -59,7 +59,7 @@
         "sakal": "kirli"
       },
       "ses": {
-        "id": "fXhoW006nc5Wf8xkGVSy",
+        "id": "mF7tIc9VLrznhGooGjaT",
         "stabilite": 0.5
       }
     },
@@ -79,7 +79,7 @@
         "ayakkabi": "#f4f1ea"
       },
       "ses": {
-        "id": "cgSgspJ2msm6clMCkdW9",
+        "id": "NNn9dv8zq2kUo7d3JSGG",
         "perde": 4,
         "stabilite": 0.5
       }
@@ -99,8 +99,8 @@
         "ayakkabi": "#3b3431"
       },
       "ses": {
-        "id": "axtmxCPnqPghs9C5SjJ8",
-        "perde": -3,
+        "id": "NNn9dv8zq2kUo7d3JSGG",
+        "perde": -4,
         "hiz": 0.95,
         "stabilite": 0.5
       }

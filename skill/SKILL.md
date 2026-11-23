@@ -5,7 +5,7 @@ description: Instagram/TikTok için yapay zekâ seslendirmeli 2D çizgi dram diz
 
 # Çizgi Dizi
 
-Proje: `C:\Users\hazal\cizgi-dizi`. Stack: Remotion 4 + React SVG karakterler + ElevenLabs TTS (v3, duygu etiketleri) + ffmpeg.
+Proje: `C:\Users\hazal\cizgi-dizi`. Stack: Remotion 4 + React SVG karakterler + ElevenLabs TTS (Eleven v4, duygu etiketleri) + ffmpeg.
 
 ## Akış
 
@@ -40,12 +40,10 @@ Karakter tasarlarken `npm run kontrol -- <dizi>` çalıştır, sonra `npm run de
 - Giysi: `ust`, `alt`, `etek`, `elbise`, `desen` (`puantiye` | `cizgili` | `ekose`), `yaka`, `kisaKol`, `ayakkabi`.
 - Yüz ve aksesuar: `sakal` (`biyik` | `kirli` | `sakal`), `gozluk`, `kolye` (ay kolye rengi, ör. `#e8c35a`).
 - Bu hesapta Türkçe sesler var:
-  - **Yunus** `fXhoW006nc5Wf8xkGVSy`: erkek
-  - **Yasemin** `ywzrmJ3AgYiLqAeZAGrq`: kadın, derin; yaşlı kadın için `perde: -1`
-  - **Meloxia** `axtmxCPnqPghs9C5SjJ8`: kadın
-  - Çocuk sesi için **Jessica** `cgSgspJ2msm6clMCkdW9` ile `perde: +4` kullan.
-  - Hazal'ın klonu `HMq7M1L1Ct9EHmk6DF1O`: yalnızca Hazal isterse.
-  - Daha fazlası: `GET /v1/voices`.
+  - **Seyfullah Kartal** `mF7tIc9VLrznhGooGjaT`: ana erkek karakter / anlatıcı
+  - **Doğa – Sesli Kitap Ustası** `ctoYieZ4J7WwcdhujpMq`: ikinci erkek karakter / yedek anlatıcı
+  - **Derya** `NNn9dv8zq2kUo7d3JSGG`: kadın karakterler. Yaşlı kadın `perde: -2…-4`, çocuk `perde: +4`.
+  - Yalnızca bu üç ses kullanılır; başka ses seçme.
   - Aynı sesi iki karaktere verirsen `perde` ±2 ile ayır.
 
 ## bolum-XX.json
@@ -73,7 +71,7 @@ Karakter tasarlarken `npm run kontrol -- <dizi>` çalıştır, sonra `npm run de
 
 - **mekan**: `salon` | `yatak-odasi` | `mutfak` | `sokak` | `hastane` | `ofis`. `zaman`: `gunduz` | `gece`. `zengin: true` konak varyantıdır (damask duvar, avize, altın çerçeve).
 - **Dünya** 1080×1920 boyutunda. `x` değeri 0–1080 arası ayak ortasıdır. Pratik aralık 150–930; karakterler arasında en az 200 bırak. `derinlik` 0 ön, 1 arka (küçük). Salonda kanepe x 150–930 arasındadır; `otur: true` olan karakter kanepeye oturur.
-- **duygu**: `normal` | `mutlu` | `uzgun` | `aglama` (gözyaşı) | `korku` (ter, titreme) | `kizgin` | `saskin` | `sersem` | `supheli` | `utangac`. Duygu aynı zamanda ses tonunu seçer (v3 etiketi: `[crying]`, `[angry]`…). Elle vermek için `"ton": "[whispers]"`.
+- **duygu**: `normal` | `mutlu` | `uzgun` | `aglama` (gözyaşı) | `korku` (ter, titreme) | `kizgin` | `saskin` | `sersem` | `supheli` | `utangac`. Duygu aynı zamanda ses tonunu seçer (satır içi etiket: `[crying]`, `[angry]`…). Elle vermek için `"ton": "[whispers]"`.
 - **poz**: `ayakta` | `oturuyor` | `basini-tutuyor` | `kollari-bagli` | `isaret` | `koruyor` (kolunu baktığı yöne açar) | `eller-agizda` | `el-salliyor`.
 - **yon**: `sag` | `sol`. Belirtilmezse karakter merkeze bakar. `isaret` ve `koruyor` bu yöne uzanır.
 - **Çekim içindeki `oyuncular`** sahne durumunu o çekimden itibaren değiştirir: giriş için `gizli: false`, çıkış, duygu değişimi. `duygu` ve `poz` kısayolları konuşan kişiye uygulanır.
@@ -95,7 +93,7 @@ Instagram hesabı **@cizgidizikanali**; bu ad her `dizi.json` içinde `hesap` al
 - Müzik: bölüm JSON'una `"muzik": "muzik/dosya.mp3"` ekle (public/ altında, telifsiz). %12 seste döner.
 - Süre: seslendirmeden sonra çıktıdaki "N çekim, X sn" satırına bak. X + 2,2 ≤ 178 olmalı (3 dk sınırı). Fazlaysa replik sil ve yeniden seslendir; önbellekteki replikler tekrar kredi yemez. Replikten sonraki boşluk varsayılan olarak 0,22 sn.
 - Kredi: starter planda ayda 40k karakter. 3 dakikalık bir bölüm ~2000 harf, kısa bölüm ~300–500 harf tutar. `kontrol` komutu tahmini gösterir.
-- v3 hata verirse `seslendir` otomatik olarak `eleven_multilingual_v2`'ye düşer (bu modelde etiket yok). Elle seçmek için `--model eleven_multilingual_v2`. Önbelleği yok saymak için `--yeniden`.
+- Model `eleven_v4` (duygu etiketi otomatik eklenir). Hata verirse seslendirme durur, başka modele geçmez; model değiştirmeden önce kullanıcıya sor. Önbelleği yok saymak için `--yeniden`.
 - Yeni mekân, poz ya da saç eklemek için: `src/mekan/Mekan.tsx`, `src/karakter/Karakter.tsx` (`POZ` el hedefleri, `IFADE` duyguları, `SacArka`/`SacOn`) ve `scripts/dogrula.mjs` listeleri. Hepsi birlikte güncellenmeli.
 - Repo'ya ses ve video girmez (`public/diziler/*`, `out/` gitignore'da). `.env` asla commit edilmez.
 - Gerçek dizilerin karakterlerini, adlarını ve repliklerini kopyalama; kalıbı al, hikâyeyi özgün yaz.
